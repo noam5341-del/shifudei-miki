@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock3, MapPin, MessageCircle, Navigation, Phone, Utensils } from "lucide-react";
 import heroImage from "@/assets/shpudey-miki-grill-hero.jpg";
-import interiorImage from "@/assets/shpudey-miki-interior.jpg";
+import interiorImage from "@/assets/shpudey-miki-interior-natural.jpg";
 
 const phoneDisplay = "050-824-9977";
 const phoneLink = "tel:0508249977";
