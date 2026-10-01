@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock3, MapPin, MessageCircle, Navigation, Phone, Utensils } from "lucide-react";
 import heroImage from "@/assets/shpudey-miki-grill-hero.jpg";
-import interiorImage from "@/assets/shpudey-miki-interior.jpg";
 
 const phoneDisplay = "050-824-9977";
 const phoneLink = "tel:0508249977";
@@ -147,7 +146,14 @@ function RestaurantPage() {
               </div>
             </div>
             <div className="md:col-span-7">
-              <img src={interiorImage} alt="מסעדת גריל ישראלית חמה עם גריל פתוח" width={1440} height={832} loading="lazy" className="aspect-video w-full rounded-2xl object-cover" />
+              <div className="grid min-h-80 content-between rounded-2xl border border-smoke/10 bg-coal p-7 sm:min-h-96 sm:p-10">
+                <div className="flex items-center justify-between gap-4 text-sm text-ash">
+                  <span>הרצל 3-4, אור עקיבא</span>
+                  <MapPin className="size-5 shrink-0 text-ember" />
+                </div>
+                <p className="max-w-[11ch] text-5xl font-black leading-tight text-smoke sm:text-7xl">מחכים לכם ליד הגריל</p>
+                <div className="flex items-center gap-3 text-sm text-ash"><span className="size-2 rounded-full bg-herb" /> ראשון–חמישי · 11:00–22:00</div>
+              </div>
             </div>
           </div>
         </div>
