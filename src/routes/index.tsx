@@ -68,8 +68,6 @@ function RestaurantPage() {
   return (
     <main dir="rtl" className="min-h-screen overflow-x-hidden bg-coal text-smoke">
       <section className="relative overflow-hidden bg-char">
-        <div className="pointer-events-none absolute -left-36 -top-52 size-[38rem] rounded-full bg-ember/10 blur-3xl" />
-        <div className="pointer-events-none absolute -right-36 top-24 size-[32rem] rounded-full bg-herb/10 blur-3xl" />
 
         <header className="relative z-20 border-b border-smoke/10">
           <div className="mx-auto grid h-16 max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 sm:flex sm:px-8">
@@ -137,7 +135,7 @@ function RestaurantPage() {
               <h2 className="mt-2 text-4xl font-black sm:text-5xl">שיפודי מיקי<br />אור עקיבא</h2>
               <div className="mt-8 space-y-5 text-ash">
                 <p className="flex items-start gap-3"><MapPin className="mt-0.5 size-5 shrink-0 text-ember" /><span><strong className="block text-smoke">הרצל 3-4</strong>אור עקיבא</span></p>
-                <p className="flex items-start gap-3"><Clock3 className="mt-0.5 size-5 shrink-0 text-ember" /><span><strong className="block text-smoke">ראשון–חמישי</strong>11:00–22:00<br /><span className="text-sm">שישי ושבת: סגור כרגע</span></span></p>
+                <p className="flex items-start gap-3"><Clock3 className="mt-0.5 size-5 shrink-0 text-ember" /><span><strong className="block text-smoke">ראשון–חמישי</strong><span dir="ltr" className="inline-block">11:00–22:00</span><br /><span className="text-sm">שישי ושבת: סגור כרגע</span></span></p>
                 <a href={phoneLink} className="flex items-center gap-3 text-smoke transition-colors hover:text-ember"><Phone className="size-5 text-ember" />{phoneDisplay}</a>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
