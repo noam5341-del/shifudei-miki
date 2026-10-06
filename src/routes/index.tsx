@@ -5,40 +5,80 @@ import heroImage from "@/assets/shpudey-miki-grill-hero.jpg";
 const phoneDisplay = "050-824-9977";
 const phoneLink = "tel:0508249977";
 const whatsappLink = "https://wa.me/972508249977?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A9%D7%99%D7%A4%D7%95%D7%93%D7%99%20%D7%9E%D7%99%D7%A7%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%A6%D7%A2%20%D7%94%D7%96%D7%9E%D7%A0%D7%94";
-const mapsLink = "https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A8%D7%A6%D7%9C%203-4%2C%20%D7%90%D7%95%D7%A8%20%D7%A2%D7%A7%D7%99%D7%91%D7%90";
+const mapsLink = "https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A9%D7%A7%D7%9E%D7%99%D7%9D%208%2C%20%D7%90%D7%95%D7%A8%20%D7%A2%D7%A7%D7%99%D7%91%D7%90";
 
-const plateItems = [
-  ["פרגית", "70", "2 שיפודי פרגית, 3 סלטים וממרחים ולחם לבחירה"],
-  ["כבד עוף", "70", "2 שיפודי כבד עוף, 3 סלטים וממרחים ולחם לבחירה"],
-  ["קבב", "70", "2 שיפודי קבב, 3 סלטים וממרחים ולחם לבחירה"],
-  ["לבבות", "70", "2 שיפודי לבבות, 3 סלטים וממרחים ולחם לבחירה"],
-  ["כנפיים", "55", "6 יחידות כנפיים, 3 סלטים וממרחים ולחם לבחירה"],
-  ["קציצות", "70", "3 סלטים וממרחים ולחם לבחירה"],
-  ["נקניקיות מרגז", "70", "3 סלטים וממרחים ולחם לבחירה"],
-  ["אנטריקוט", "75", "3 סלטים וממרחים ולחם לבחירה"],
-  ["מולרד", "75", "3 סלטים וממרחים ולחם לבחירה"],
+const starters = [
+  ["סיגר בשר", "30"],
+  ["פיסטריות", "30"],
+  ["חציל בטחינה", "10"],
+  ["חומוס", "10"],
+  ["צ'יפס", "10"],
 ] as const;
 
-const sandwichItems = [
-  ["פרגית", "60"], ["כבד עוף", "60"], ["קבב", "60"], ["לבבות", "60"],
-  ["קציצות", "60"], ["נקניקיות מרגז", "60"], ["מולרד", "70"], ["נתח קצבים", "70"],
+const plates40 = [
+  "קציצות (3 יח')",
+  "פרגית",
+  "לבבות",
+  "מרגז חריף",
+  "קבב כבש",
+  "כבד עוף",
+  "חזה עוף",
+  "טחול",
 ] as const;
 
-const sides = [["פיתה", "2"], ["בגט", "3"]] as const;
-const drinks = [
-  ["פחית קוקה קולה", "10"], ["פחית קולה זירו", "10"], ["פחית פאנטה", "10"],
-  ["ספרינג אפרסק", "10"], ["פריגת ענבים", "10"], ["פריגת תפוזים", "10"],
-  ["פריגת אשכוליות", "10"], ["פריגת לימונענע", "10"], ["מים בטעם אפרסק", "10"],
-  ["מים בטעם תפוח", "10"], ["קינלי סודה", "8"], ["מים מינרליים נביעות", "8"],
+const plates45 = ["מולארד", "נתח קצבים", "שיפוד אנטריקוט"] as const;
+
+const specialPlates = [
+  ["כנפיים", "50"],
+  ["שיפוד אשכים", "50"],
+  ["שיפוד שקדים", "60"],
+  ["שיפוד כבד אווז", "60"],
+  ["סטייק אנטריקוט", "100"],
+  ["צלעות כבש (3 יח')", "150"],
+  ["פילה בקר", "120"],
+] as const;
+
+const softDrinks = [
+  "קוקה קולה",
+  "קוקה קולה זירו",
+  "ענבים",
+  "פאנטה",
+  "ספרייט",
+  "ספרייט זירו",
+  "תפוזים",
+  "תות בננה",
+  "לימונענע",
+  "נסטי",
+  "תפוחים",
+] as const;
+
+const beers = [
+  ["הייניקן", "15"],
+  ["קורונה", "15"],
+  ["ויינשטפן", "20"],
+] as const;
+
+const shots = [
+  ["שוט ערק", "25"],
+  ["שוט אסאיי", "25"],
+  ["שוט בלאק", "25"],
+] as const;
+
+const alcohol = [
+  ["כוס ג'ין אדום", "40"],
+  ["בקבוק ג'ין אדום", "160"],
+  ["כוס ערק", "45"],
+  ["כוס אסאיי", "45"],
+  ["כוס בלאק", "45"],
 ] as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "שיפודי מיקי | גריל ישראלי באור עקיבא" },
-      { name: "description", content: "שיפודי מיקי באור עקיבא — שיפודים, בשרים על האש, פיתה ובגט. הזמנות בטלפון וב-WhatsApp." },
+      { name: "description", content: "שיפודי מיקי באור עקיבא — שיפודים, בשרים על האש ומנות פתיחה. הזמנות בטלפון וב-WhatsApp." },
       { property: "og:title", content: "שיפודי מיקי | אור עקיבא" },
-      { property: "og:description", content: "בשר על האש, שיפודים ופיתה טרייה בהרצל 3-4, אור עקיבא." },
+      { property: "og:description", content: "בשר על האש ושיפודים בהשקמים 8, אור עקיבא." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -59,6 +99,16 @@ function MenuList({ items, detailed = false }: { items: ReadonlyArray<readonly s
           </div>
           {detailed && description ? <p className="mt-1.5 max-w-xl text-sm leading-6 text-ash">{description}</p> : null}
         </li>
+      ))}
+    </ul>
+  );
+}
+
+function NameList({ names }: { names: ReadonlyArray<string> }) {
+  return (
+    <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-3">
+      {names.map((name) => (
+        <li key={name} className="text-sm font-medium text-smoke/90">{name}</li>
       ))}
     </ul>
   );
@@ -91,7 +141,7 @@ function RestaurantPage() {
             <div className="animate-rise md:col-span-7">
               <span className="inline-flex items-center gap-2 rounded-full border border-herb/30 bg-herb/10 px-3 py-1 text-xs font-medium text-herb"><Utensils className="size-3.5" /> גריל ישראלי · אור עקיבא</span>
               <h1 className="mt-5 max-w-[12ch] text-5xl font-black leading-[1.02] sm:text-6xl lg:text-8xl">שיפודי מיקי</h1>
-              <p className="mt-5 max-w-[42ch] text-lg leading-8 text-ash sm:text-xl">שיפודים עסיסיים, בשר על האש ופיתה טרייה — חם מהגריל ובלי קיצורי דרך.</p>
+              <p className="mt-5 max-w-[42ch] text-lg leading-8 text-ash sm:text-xl">שיפודים עסיסיים, בשר על האש ומנות פתיחה — חם מהגריל ובלי קיצורי דרך.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a href={whatsappLink} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-ember px-6 py-3 font-bold text-coal transition-transform active:scale-[0.98]"><MessageCircle className="size-5" /> הזמנה דרך WhatsApp</a>
                 <a href={phoneLink} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-smoke/25 px-5 py-3 font-semibold text-smoke transition-colors hover:border-smoke/50"><Phone className="size-5" /> {phoneDisplay}</a>
@@ -114,13 +164,53 @@ function RestaurantPage() {
             <div className="min-w-0"><p className="text-sm font-semibold text-ember">מהגריל לצלחת</p><h2 className="mt-1 text-4xl font-black sm:text-5xl">התפריט</h2></div>
             <span className="shrink-0 text-xs text-ash">המחירים בש״ח</span>
           </div>
+
           <div className="grid gap-x-14 gap-y-14 lg:grid-cols-2">
-            <div><h3 className="mb-6 text-xl font-bold text-ember">בצלחת</h3><MenuList items={plateItems} detailed /></div>
             <div className="space-y-14">
-              <div><h3 className="mb-6 text-xl font-bold text-ember">בפיתה / בבגט</h3><MenuList items={sandwichItems} /></div>
-              <div className="grid gap-10 sm:grid-cols-2">
-                <div><h3 className="mb-6 text-xl font-bold text-herb">תוספות</h3><MenuList items={sides} /></div>
-                <div><h3 className="mb-6 text-xl font-bold text-herb">שתייה קלה</h3><MenuList items={drinks} /></div>
+              <div>
+                <h3 className="mb-6 text-xl font-bold text-ember">מנות פתיחה</h3>
+                <MenuList items={starters} />
+              </div>
+              <div>
+                <h3 className="mb-2 text-xl font-bold text-ember">שיפוד בצלחת · מנה 40 ₪</h3>
+                <p className="mb-6 text-sm text-ash">למחירי 3 שיפודים ומעלה מוגש סלט הבית לפי סועד</p>
+                <NameList names={plates40} />
+              </div>
+              <div>
+                <h3 className="mb-6 text-xl font-bold text-ember">שיפוד בצלחת · מנה 45 ₪</h3>
+                <NameList names={plates45} />
+              </div>
+              <div>
+                <h3 className="mb-6 text-xl font-bold text-ember">שיפוד בצלחת · מנות מיוחדות</h3>
+                <MenuList items={specialPlates} />
+              </div>
+              <div className="rounded-2xl border border-ember/25 bg-ember/10 p-6">
+                <div className="flex items-baseline gap-2">
+                  <h3 className="shrink-0 text-xl font-bold text-ember">משפחתי</h3>
+                  <span className="min-w-4 flex-1 translate-y-[-4px] border-b border-dotted border-ash/30" />
+                  <span className="shrink-0 text-xl font-bold tabular-nums text-smoke">100 ₪</span>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-ash">3 שיפודים, מוגש לצד: סלט הבית, צ'יפס ולחם</p>
+              </div>
+            </div>
+
+            <div className="space-y-14">
+              <div>
+                <h3 className="mb-2 text-xl font-bold text-herb">שתייה קלה</h3>
+                <p className="mb-6 text-sm text-ash">פחית 10 ₪ · זכוכית 12 ₪</p>
+                <NameList names={softDrinks} />
+              </div>
+              <div>
+                <h3 className="mb-6 text-xl font-bold text-herb">בירה</h3>
+                <MenuList items={beers} />
+              </div>
+              <div>
+                <h3 className="mb-6 text-xl font-bold text-herb">בקטנה</h3>
+                <MenuList items={shots} />
+              </div>
+              <div>
+                <h3 className="mb-6 text-xl font-bold text-herb">אלכוהול</h3>
+                <MenuList items={alcohol} />
               </div>
             </div>
           </div>
@@ -134,8 +224,8 @@ function RestaurantPage() {
               <p className="text-sm font-semibold text-ember">בואו לבקר</p>
               <h2 className="mt-2 text-4xl font-black sm:text-5xl">שיפודי מיקי<br />אור עקיבא</h2>
               <div className="mt-8 space-y-5 text-ash">
-                <p className="flex items-start gap-3"><MapPin className="mt-0.5 size-5 shrink-0 text-ember" /><span><strong className="block text-smoke">הרצל 3-4</strong>אור עקיבא</span></p>
-                <p className="flex items-start gap-3"><Clock3 className="mt-0.5 size-5 shrink-0 text-ember" /><span><strong className="block text-smoke">ראשון–חמישי</strong><span dir="ltr" className="inline-block">11:00–22:00</span><br /><span className="text-sm">שישי ושבת: סגור כרגע</span></span></p>
+                <p className="flex items-start gap-3"><MapPin className="mt-0.5 size-5 shrink-0 text-ember" /><span><strong className="block text-smoke">השקמים 8</strong>אור עקיבא</span></p>
+                <p className="flex items-start gap-3"><Clock3 className="mt-0.5 size-5 shrink-0 text-ember" /><span><strong className="block text-smoke">ראשון–חמישי</strong><span dir="ltr" className="inline-block">11:00–23:00</span><br /><span className="text-sm">שישי ושבת: סגור כרגע</span></span></p>
                 <a href={phoneLink} className="flex items-center gap-3 text-smoke transition-colors hover:text-ember"><Phone className="size-5 text-ember" />{phoneDisplay}</a>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -146,11 +236,11 @@ function RestaurantPage() {
             <div className="md:col-span-7">
               <div className="grid min-h-80 content-between rounded-2xl border border-smoke/10 bg-coal p-7 sm:min-h-96 sm:p-10">
                 <div className="flex items-center justify-between gap-4 text-sm text-ash">
-                  <span>הרצל 3-4, אור עקיבא</span>
+                  <span>השקמים 8, אור עקיבא</span>
                   <MapPin className="size-5 shrink-0 text-ember" />
                 </div>
                 <p className="max-w-[11ch] text-5xl font-black leading-tight text-smoke sm:text-7xl">מחכים לכם ליד הגריל</p>
-                <div className="flex items-center gap-3 text-sm text-ash"><span className="size-2 rounded-full bg-herb" /> ראשון–חמישי · 11:00–22:00</div>
+                <div className="flex items-center gap-3 text-sm text-ash"><span className="size-2 rounded-full bg-herb" /> ראשון–חמישי · <span dir="ltr" className="inline-block">11:00–23:00</span></div>
               </div>
             </div>
           </div>
@@ -160,7 +250,7 @@ function RestaurantPage() {
       <footer className="border-t border-smoke/10 bg-coal">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-5 py-8 text-sm text-ash sm:flex-row sm:items-center sm:px-8">
           <div className="flex items-center gap-2"><span className="grid size-7 place-items-center rounded bg-ember font-black text-coal">מ</span><span className="font-bold text-smoke">שיפודי מיקי · אור עקיבא</span></div>
-          <p>גריל ישראלי · הרצל 3-4 · {phoneDisplay}</p>
+          <p>גריל ישראלי · השקמים 8 · {phoneDisplay}</p>
         </div>
       </footer>
 
