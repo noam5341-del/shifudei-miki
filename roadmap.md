@@ -9,4 +9,4 @@
 - [x] Update drinks note: can 10₪, glass bottle 12₪.
 - [x] Update opening hours to 11:00–23:00.
 - [x] Update address to השקמים 8, אור עקיבא (including Google Maps link).
-- [ ] Republish the updated site publicly.
+- [x] Republish the updated site publicly.
